@@ -55,7 +55,7 @@ jobs:
             });
 
       - name: Checkout PR branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ steps.pr-details.outputs.head_sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
