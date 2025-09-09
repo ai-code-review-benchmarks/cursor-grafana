@@ -26,7 +26,7 @@ jobs:
         with:
           path: ./grafana
           persist-credentials: false
-      - uses: dagger/dagger-for-github@e47aba410ef9bb9ed81a4d2a97df31061e5e842e
+      - uses: dagger/dagger-for-github@710906f3073901ccd9c8fd38e18848c00d9892be
         with:
           verb: run
           args: go -C grafana run ./pkg/build/cmd artifacts -a targz:grafana:linux/amd64 --grafana-dir="${PWD}/grafana" > out.txt
@@ -115,7 +115,7 @@ jobs:
       - name: chmod +x
         run: chmod +x ./e2e-runner
       - name: Run E2E tests
-        uses: dagger/dagger-for-github@e47aba410ef9bb9ed81a4d2a97df31061e5e842e
+        uses: dagger/dagger-for-github@710906f3073901ccd9c8fd38e18848c00d9892be
         with:
           verb: run
           args: go run ./pkg/build/e2e --package=grafana.tar.gz
